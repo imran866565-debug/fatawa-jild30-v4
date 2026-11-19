@@ -1,0 +1,186 @@
+{
+ "chunks": [
+  {
+   "chunk": "01",
+   "description": "Jild 30, pp. 5-92",
+   "end_page": 92,
+   "file": "jild-30-chunk-01.json",
+   "items": 8,
+   "pages_present": 44,
+   "start_page": 5,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 8 items, pp.5-92, ids/pages == v3 chunk file, vol 62, 2 empty sawal, 0 empty jawab, notes 22 vs v3 22, glosses 265x 'کا مطلب' + 7x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Holds pesh-lafz (sawal empty by design). p.91 source gap flagged in a v3 note. pp.5-92. SHA 2597f974…."
+  },
+  {
+   "chunk": "02",
+   "description": "Jild 30, pp. 93-128",
+   "end_page": 128,
+   "file": "jild-30-chunk-02.json",
+   "items": 16,
+   "pages_present": 46,
+   "start_page": 93,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 16 items, pp.93-128, ids/pages == v3 chunk file, vol 62, 0 empty sawal, 0 empty jawab, notes 30 vs v3 29, glosses 271x 'کا مطلب' + 14x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Notes 30 vs v3 29 (+1 restoration — v3 had softened 'کذب کعب' to 'غلط کہتے ہیں', restored as 'کعب نے جھوٹ کہا' + Arabic). PUA p.113 flagged only. pp.93-128. SHA f86c3ead…."
+  },
+  {
+   "chunk": "03",
+   "description": "Jild 30, pp. 129-178",
+   "end_page": 178,
+   "file": "jild-30-chunk-03.json",
+   "items": 1,
+   "pages_present": 50,
+   "start_page": 129,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 1 items, pp.129-178, ids/pages == v3 chunk file, vol 62, 0 empty sawal, 0 empty jawab, notes 7 vs v3 6, glosses 306x 'کا مطلب' + 3x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. One item: masala-33 [129-178] (head of the masala-33 join; item ends mid-list into chunk 04 under the same id). Notes 7 vs v3 6 (0 lost — the 1 'missing-verbatim' note is present with 'امام واحدی' → 'واحدی' per Rule 4). pp.129-178. SHA 35c09944…."
+  },
+  {
+   "chunk": "04",
+   "description": "Jild 30, pp. 179-228",
+   "end_page": 228,
+   "file": "jild-30-chunk-04.json",
+   "items": 7,
+   "pages_present": 55,
+   "start_page": 179,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 7 items, pp.179-228, ids/pages == v3 chunk file, vol 62, 7 empty sawal, 0 empty jawab, notes 19 vs v3 19, glosses 338x 'کا مطلب' + 1x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Holds ayat-ashira [179-185] (masala-33 join tail) and the irshad-33 head [228]. pp.179-228. SHA 5ef4f730…."
+  },
+  {
+   "chunk": "05",
+   "description": "Jild 30, pp. 229-266",
+   "end_page": 266,
+   "file": "jild-30-chunk-05.json",
+   "items": 39,
+   "pages_present": 76,
+   "start_page": 229,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 39 items, pp.229-266, ids/pages == v3 chunk file, vol 62, 39 empty sawal, 0 empty jawab, notes 22 vs v3 22, glosses 301x 'کا مطلب' + 9x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Holds the irshad-33 tail [229]. pp.229-266. SHA a9c94c14…."
+  },
+  {
+   "chunk": "06",
+   "description": "Jild 30, pp. 267-305",
+   "end_page": 305,
+   "file": "jild-30-chunk-06.json",
+   "items": 14,
+   "pages_present": 52,
+   "start_page": 267,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 14 items, pp.267-305, ids/pages == v3 chunk file, vol 62, 13 empty sawal, 0 empty jawab, notes 14 vs v3 13, glosses 182x 'کا مطلب' + 4x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Notes 14 vs v3 13 (+1 addition flagging the p.306 source gap). pp.267-305. SHA 892911e1…."
+  },
+  {
+   "chunk": "07",
+   "description": "Jild 30, pp. 307-358",
+   "end_page": 358,
+   "file": "jild-30-chunk-07.json",
+   "items": 19,
+   "pages_present": 66,
+   "start_page": 307,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 19 items, pp.307-358, ids/pages == v3 chunk file, vol 62, 19 empty sawal, 0 empty jawab, notes 39 vs v3 35, glosses 637x 'کا مطلب' + 8x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Notes 39 vs v3 35 (0 lost — the 3 'missing-verbatim' notes are present with corrections: الحجر ۶۵ → الکہف ۶۵ and آل عمران ۱۲۴ → ۱۷۹, both marked as تصحیح in-file; 'فتوائے گنگوہی صاحب' → 'فتویٰ گنگوہی' per Rule 4). Item-19 closes the risala at p.358. pp.307-358. SHA 9f793b00…."
+  },
+  {
+   "chunk": "08",
+   "description": "Jild 30, pp. 359-408",
+   "end_page": 408,
+   "file": "jild-30-chunk-08.json",
+   "items": 1,
+   "pages_present": 50,
+   "start_page": 359,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 1 items, pp.359-408, ids/pages == v3 chunk file, vol 62, 0 empty sawal, 0 empty jawab, notes 7 vs v3 5, glosses 8x 'کا مطلب' + 3x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. One item: masala-35 [359-408] (head of the masala-35 join). Notes 7 vs v3 5 (restorations: 'گمراہی بد دینی کا منہ کالا' p.365 + 'امت ملعونہ' p.371, both dropped by v3). Glosses light in 'کا مطلب' counts — ~420 parenthetical glosses. pp.359-408. SHA 2fa2dfdc…."
+  },
+  {
+   "chunk": "09",
+   "description": "Jild 30, pp. 409-458",
+   "end_page": 458,
+   "file": "jild-30-chunk-09.json",
+   "items": 5,
+   "pages_present": 53,
+   "start_page": 409,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 5 items, pp.409-458, ids/pages == v3 chunk file, vol 62, 5 empty sawal, 0 empty jawab, notes 13 vs v3 13, glosses 101x 'کا مطلب' + 3x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Holds ayat-19-40 [409-422] (masala-35 join tail) and the fasl-2-wasl-1-hadith-71-95 head [436-458]. pp.409-458. SHA e36b30aa…."
+  },
+  {
+   "chunk": "10",
+   "description": "Jild 30, pp. 459-499",
+   "end_page": 499,
+   "file": "jild-30-chunk-10.json",
+   "items": 17,
+   "pages_present": 55,
+   "start_page": 459,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 17 items, pp.459-499, ids/pages == v3 chunk file, vol 62, 17 empty sawal, 0 empty jawab, notes 4 vs v3 4, glosses 353x 'کا مطلب' + 25x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Holds aman-hadith-95 [459] (fasl-2 join tail) and aman-hadith-129-start [499] (p500 join head; ends mid-hadith, continues p.500 in chunk 11). pp.459-499. SHA 3a8ca175…."
+  },
+  {
+   "chunk": "11",
+   "description": "Jild 30, pp. 500-549",
+   "end_page": 549,
+   "file": "jild-30-chunk-11.json",
+   "items": 6,
+   "pages_present": 54,
+   "start_page": 500,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 6 items, pp.500-549, ids/pages == v3 chunk file, vol 62, 6 empty sawal, 0 empty jawab, notes 17 vs v3 17, glosses 119x 'کا مطلب' + 4x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Holds p500 [500-506] (p500 join tail) and p547 [547-549] (hadith-146 join head; p.547 ends mid-discussion into chunk 12, preserved). pp.500-549. SHA bafe160d…."
+  },
+  {
+   "chunk": "12",
+   "description": "Jild 30, pp. 550-599",
+   "end_page": 599,
+   "file": "jild-30-chunk-12.json",
+   "items": 28,
+   "pages_present": 77,
+   "start_page": 550,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 28 items, pp.550-599, ids/pages == v3 chunk file, vol 62, 28 empty sawal, 0 empty jawab, notes 17 vs v3 17, glosses 396x 'کا مطلب' + 9x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Holds hadith-146 [550-551] (hadith-146 join tail) and the hadith-175 head [598-599]. pp.550-599. SHA e2e84327…."
+  },
+  {
+   "chunk": "13",
+   "description": "Jild 30, pp. 600-635",
+   "end_page": 635,
+   "file": "jild-30-chunk-13.json",
+   "items": 45,
+   "pages_present": 78,
+   "start_page": 600,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 45 items, pp.600-635, ids/pages == v3 chunk file, vol 62, 45 empty sawal, 0 empty jawab, notes 10 vs v3 10, glosses 189x 'کا مطلب' + 5x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Holds the hadith-175 tail [600-604]. pp.600-635. SHA dfdabe7b…."
+  },
+  {
+   "chunk": "14",
+   "description": "Jild 30, pp. 637-694",
+   "end_page": 694,
+   "file": "jild-30-chunk-14.json",
+   "items": 8,
+   "pages_present": 62,
+   "start_page": 637,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 8 items, pp.637-694, ids/pages == v3 chunk file, vol 62, 1 empty sawal, 0 empty jawab, notes 22 vs v3 21, glosses 492x 'کا مطلب' + 16x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Notes 22 vs v3 21 (+1 addition flagging the p.636 source gap). PUA p.668 flagged only. pp.637-694. SHA 02226a46…."
+  },
+  {
+   "chunk": "15",
+   "description": "Jild 30, pp. 695-736",
+   "end_page": 736,
+   "file": "jild-30-chunk-15.json",
+   "items": 2,
+   "pages_present": 41,
+   "start_page": 695,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 2 items, pp.695-736, ids/pages == v3 chunk file, vol 62, 0 empty sawal, 0 empty jawab, notes 6 vs v3 6, glosses 93x 'کا مطلب' + 4x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Two items. Notes 6 vs v3 6 (0 lost — the 1 'missing-verbatim' note is present with the correction رسالہ ۵۲۶ → مسئلہ ۴۳, justified: p.711 is in masala-43, no risala 526 exists). pp.695-736. SHA af9b953b…."
+  },
+  {
+   "chunk": "16",
+   "description": "Jild 30, pp. 737-772",
+   "end_page": 772,
+   "file": "jild-30-chunk-16.json",
+   "items": 9,
+   "pages_present": 44,
+   "start_page": 737,
+   "status": "done",
+   "verified": "2026-11-19 — merge agent verified on disk: 9 items, pp.737-772, ids/pages == v3 chunk file, vol 62, 8 empty sawal, 1 empty jawab, notes 23 vs v3 23, glosses 83x 'کا مطلب' + 14x 'کہتے ہیں', 0 markers in sawal+jawab. Clean re-write. Ends p.772 with the risala khatima. Empty jawab exactly the allow-listed hadi-al-hayran-fasl-dawwam-sawal (empty in v3 too). Restorations: v3-softened 'غلط گمان' → 'فاسد گمان' p.741; Arabic dropped by v3 restored (Sha'rani quote, Zurqani quote, مواقف quotes, closing durud). Two v3 honorific carry-overs fixed. pp.737-772. SHA 297731e9…."
+  }
+ ],
+ "total_pages_present": 903,
+ "total_unique_pages": 715,
+ "volume": "Jild 30",
+ "volume_ids": [
+  62
+ ]
+}

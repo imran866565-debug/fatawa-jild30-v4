@@ -1,0 +1,85 @@
+name: Merge Jild 30 tashreeh v4
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Merge chunks
+        run: python3 merge_jild30_v4.py
+      - name: Verify merged file
+        run: |
+          python3 - <<'EOF'
+          import json, re
+          import merge_jild30_v4 as m
+          d = json.load(open('jild-30.json', encoding='utf-8'))
+          items = d['masail']
+          pages = set()
+          for it in items:
+              pages.update(it['pages'])
+          print('items:', len(items))
+          print('unique pages:', len(pages), 'min:', min(pages), 'max:', max(pages))
+          print('ids unique:', len(set(it['id'] for it in items)) == len(items))
+          print('empty jawab:', sum(1 for it in items if not it.get('tashreeh_jawab')))
+          print('volume_ids:', sorted(set(it.get('volume_id') for it in items)))
+          print('first id:', items[0]['id'])
+          print('last id:', items[-1]['id'])
+          exceptions = sorted(it['id'] for it in items if it.get('start_page') != min(it['pages']))
+          print('start_page exceptions:', exceptions)
+          raw = open('jild-30.json', encoding='utf-8').read()
+          SAFHA = "\u0635\u0641\u062d\u06c1"
+          LENT = "\u3010" + SAFHA
+          print('lenticular markers remaining:', raw.count(LENT))
+          print('short markers remaining:', len(re.findall(r"\[\u0635 \d+\]", raw)))
+          print('[safha N] markers total:', len(re.findall(r"\[" + SAFHA + r" \d+\]", raw)))
+          # Independent re-check of the exact v3 identity (lists embedded in merge script).
+          ids = [it['id'] for it in items]
+          assert ids == list(m.V3_IDS), 'ID sequence != v3'
+          for it in items:
+              assert it['pages'] == m.V3_PAGES[it['id']], f"{it['id']}: pages != v3"
+          assert len(items) == 218
+          assert len(pages) == 715
+          assert min(pages) == 5 and max(pages) == 772
+          assert len(set(it['id'] for it in items)) == len(items)
+          assert sorted(it['id'] for it in items if not it.get('tashreeh_jawab')) == ['jild30-hadi-al-hayran-fasl-dawwam-sawal']
+          assert sorted(set(it.get('volume_id') for it in items)) == [62]
+          assert exceptions == []
+          assert items[0]['id'] == 'jild30-pesh-lafz'
+          assert items[-1]['id'] == 'jild30-hadi-al-hayran-khatima'
+          assert LENT not in raw
+          assert not re.search(r"\[\u0635 \d+\]", raw)
+          # Joined items: exact pages + sawal/jawab lengths.
+          combined = {
+              'jild30-masala-33': ([129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185], 618, 70330),
+              'jild30-masala-35': ([359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422], 3877, 59920),
+              'jild30-fasl-2-wasl-1-hadith-71-95': ([436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459], 0, 29127),
+              'jild30-p500': ([499, 500, 501, 502, 503, 504, 505, 506], 0, 6552),
+              'jild30-hadith-146': ([547, 548, 549, 550, 551], 0, 6004),
+              'jild30-irshad-33': ([228, 229], 0, 1539),
+              'jild30-hadith-175': ([598, 599, 600, 601, 602, 603, 604], 0, 11252),
+          }
+          for cid, (exp_pages, exp_sawal, exp_jawab) in combined.items():
+              hits = [it for it in items if it['id'] == cid]
+              assert len(hits) == 1, f'{cid}: expected exactly 1 item'
+              assert hits[0]['pages'] == exp_pages, f'{cid}: pages mismatch'
+              assert len(hits[0].get('tashreeh_sawal', '')) == exp_sawal, f'{cid}: sawal length mismatch'
+              assert len(hits[0].get('tashreeh_jawab', '')) == exp_jawab, f'{cid}: jawab length mismatch'
+              print(cid, 'pages', hits[0]['pages'][0], '-', hits[0]['pages'][-1], 'sawal', exp_sawal, 'jawab', exp_jawab)
+          # Absorbed ids must be gone.
+          for sid in ['jild30-ayat-ashira', 'jild30-ayat-19-40', 'jild30-aman-hadith-95', 'jild30-aman-hadith-129-start', 'jild30-p547']:
+              assert not any(it['id'] == sid for it in items), f'absorbed id {sid} still present'
+          # No renames at merge for Jild 30.
+          print('joined items verified')
+          print('VERIFICATION PASSED')
+          EOF
+      - name: Create release with merged file
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ls -la jild-30.json
+          gh release create v1.0 jild-30.json --title "Jild 30 tashreeh v4 - merged" --notes "Merged easy-Urdu tashreeh v4 for Fatawa Razviya Jild 30: 218 items, 715 pages (volume_id 62). Generated by merge_jild30_v4.py from the 16 leaf chunk files in order 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16 (7 joins: masala-33, masala-35, fasl-2-wasl-1-hadith-71-95, p500, hadith-146, irshad-33, hadith-175 — jawab empty-string-joined, proved from the v3 chunks; no renames at merge; stable sort by start_page); item order reproduces the v3 merged file exactly (first jild30-pesh-lafz, last jild30-hadi-al-hayran-khatima). All 16 chunks carry start_page == min(pages) (0 derived). 1 empty jawab (jild30-hadi-al-hayran-fasl-dawwam-sawal, empty in v3 too); 183 empty sawal (as v3). No page markers present in the chunks." || gh release upload v1.0 jild-30.json --clobber
